@@ -87,6 +87,11 @@ function hints(p: Product) {
   if (p.id.startsWith("iluma") || p.id.startsWith("glo-"))
     return "συσκευη iqos iluma glo hyper hilo x2 prime mid";
   if (p.id.startsWith("winst")) return "winston ουινστον τσιγαρα πακετο 100s greece legend";
+  if (p.id.startsWith("camel")) return "camel καμηλ τσιγαρα yellow blue legend activate";
+  if (p.id.startsWith("lucky")) return "lucky strike λακι τσιγαρα";
+  if (p.id.startsWith("west")) return "west ουεστ τσιγαρα silver original 100s";
+  if (p.id.startsWith("prince")) return "prince πρινς τσιγαρα rich mellow";
+  if (p.id.startsWith("jps")) return "jps john player special τσιγαρα 100s";
   if (p.id.startsWith("v1")) return "veev one ατμισμα pod";
   if (p.id.startsWith("vp")) return "veev prime inprime ατμισμα pod";
   if (p.id.startsWith("cola")) return "κολα coca cola αναψυκτικο zero light";
@@ -246,7 +251,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=19`;
+const img = (file: string) => `/images/products/${file}?v=20`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -444,9 +449,20 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "winst-gr", name: "Winston 100s Classic Red Greece", desc: "Limited Edition · 100s", price: 5.4, cat: "smokes", photo: img("winston-greece-100s.jpg") },
   { id: "davi", name: "Davidoff Slim", desc: "Slim", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
   { id: "davic", name: "Davidoff Classic", desc: "Κλασικό", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
-  { id: "camely", name: "Camel Yellow", desc: "Κίτρινο", price: 5.2, cat: "smokes", photo: img("pack-gold.jpg") },
-  { id: "camelb", name: "Camel Blue", desc: "Μπλε", price: 5.2, cat: "smokes", photo: img("pack-blue.jpg") },
-  { id: "lucky", name: "Lucky Strike", desc: "Κόκκινο", price: 5.0, cat: "smokes", photo: img("pack-red.jpg") },
+  { id: "camely", name: "Camel Yellow", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("camel-yellow.jpg") },
+  { id: "camelb", name: "Camel Blue", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("camel-blue.jpg") },
+  { id: "camelw", name: "Camel White", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("camel-white.jpg") },
+  { id: "camel-ly", name: "Camel Legend Yellow", desc: "1913 · 20άδα", price: 5.2, cat: "smokes", photo: img("camel-legend-yellow.jpg") },
+  { id: "camel-lb", name: "Camel Legend Blue", desc: "1913 · 20άδα", price: 5.2, cat: "smokes", photo: img("camel-legend-blue.jpg") },
+  { id: "camel-act", name: "Camel Activate", desc: "20άδα · κάψουλα", price: 5.2, cat: "smokes", photo: img("camel-activate.jpg") },
+  { id: "lucky", name: "Lucky Strike Original", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("lucky-strike.jpg") },
+  { id: "prince-r", name: "Prince Rich", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("prince-rich.jpg") },
+  { id: "prince-m", name: "Prince Mellow", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("prince-mellow.jpg") },
+  { id: "west-s", name: "West Silver", desc: "20άδα", price: 4.7, cat: "smokes", photo: img("west-silver.jpg") },
+  { id: "west-s100", name: "West Silver 100s", desc: "100s", price: 4.9, cat: "smokes", photo: img("west-silver-100s.jpg") },
+  { id: "west-o100", name: "West Original 100s", desc: "100s", price: 4.9, cat: "smokes", photo: img("west-original-100s.jpg") },
+  { id: "jps-r", name: "JPS 100s Red", desc: "John Player Special · 100s", price: 5.0, cat: "smokes", photo: img("jps-red-100s.jpg") },
+  { id: "jps-b", name: "JPS 100s Blue", desc: "John Player Special · 100s", price: 5.0, cat: "smokes", photo: img("jps-blue-100s.jpg") },
   { id: "parl", name: "Parliament", desc: "Aqua slim", price: 5.8, cat: "smokes", photo: img("pack-slim.jpg") },
   { id: "kar", name: "Karelia Red", desc: "Κόκκινο", price: 4.8, cat: "smokes", photo: img("pack-red.jpg") },
   { id: "kars", name: "Karelia Slim", desc: "Slim", price: 5.0, cat: "smokes", photo: img("pack-slim.jpg") },
