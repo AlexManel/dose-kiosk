@@ -86,6 +86,7 @@ function hints(p: Product) {
   if (p.id.startsWith("riv")) return "glo rivo hilo click twist";
   if (p.id.startsWith("iluma") || p.id.startsWith("glo-"))
     return "συσκευη iqos iluma glo hyper hilo x2 prime mid";
+  if (p.id.startsWith("winst")) return "winston ουινστον τσιγαρα πακετο 100s greece legend";
   if (p.id.startsWith("v1")) return "veev one ατμισμα pod";
   if (p.id.startsWith("vp")) return "veev prime inprime ατμισμα pod";
   if (p.id.startsWith("cola")) return "κολα coca cola αναψυκτικο zero light";
@@ -245,7 +246,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=17`;
+const img = (file: string) => `/images/products/${file}?v=18`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -436,8 +437,11 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "marl", name: "Marlboro Red", desc: "Κόκκινο πακέτο", price: 5.5, cat: "smokes", photo: img("marlboro.jpg") },
   { id: "marlg", name: "Marlboro Gold", desc: "Χρυσό πακέτο", price: 5.5, cat: "smokes", photo: img("pack-gold.jpg") },
   { id: "marlt", name: "Marlboro Touch", desc: "Slim", price: 5.5, cat: "smokes", photo: img("pack-slim.jpg") },
-  { id: "winst", name: "Winston Classic", desc: "Κλασικό", price: 5.2, cat: "smokes", photo: img("winston.jpg") },
-  { id: "winstb", name: "Winston Blue", desc: "Μπλε", price: 5.2, cat: "smokes", photo: img("pack-blue.jpg") },
+  { id: "winst", name: "Winston Classic Red Greece", desc: "Limited Edition · 20άδα", price: 5.2, cat: "smokes", photo: img("winston-greece-red.jpg") },
+  { id: "winstb", name: "Winston Legend Blue", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-legend-blue.jpg") },
+  { id: "winst-fw", name: "Winston 100s Fine White", desc: "100s", price: 5.4, cat: "smokes", photo: img("winston-fine-white.jpg") },
+  { id: "winst-ts", name: "Winston 100s True Silver", desc: "100s", price: 5.4, cat: "smokes", photo: img("winston-true-silver.jpg") },
+  { id: "winst-gr", name: "Winston 100s Classic Red Greece", desc: "Limited Edition · 100s", price: 5.4, cat: "smokes", photo: img("winston-greece-100s.jpg") },
   { id: "davi", name: "Davidoff Slim", desc: "Slim", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
   { id: "davic", name: "Davidoff Classic", desc: "Κλασικό", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
   { id: "camely", name: "Camel Yellow", desc: "Κίτρινο", price: 5.2, cat: "smokes", photo: img("pack-gold.jpg") },
