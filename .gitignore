@@ -1,0 +1,30 @@
+node_modules/
+dist/
+.output/
+.vinxi/
+.tanstack/
+.vercel/
+.pglite/
+pglite.data/
+*.local
+.env
+.env.*
+!.env.example
+
+# sandbox / preview internals
+.grok/
+.project_id
+.node_modules.lock
+artifacts/
+attachments/
+screenshots/
+AGENTS.md
+public/__grok/
+
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
+npm-debug.log*
