@@ -8,6 +8,7 @@ import { fileToJpeg } from "@/lib/image";
 import {
   CAT_LABEL,
   DEFAULT_PIN,
+  matchesQuery,
   type Product,
   type ProductCat,
 } from "@/lib/catalog";
@@ -235,7 +236,9 @@ function ProductsPanel() {
   const router = useRouter();
   const [form, setForm] = useState<Product>(emptyProduct);
   const [busy, setBusy] = useState(false);
+  const [q, setQ] = useState("");
   const editing = Boolean(form.id && products.some((p) => p.id === form.id));
+  const visible = products.filter((p) => matchesQuery(p, q));
 
   return (
     <section className="mx-auto max-w-[980px] px-5 py-10">
@@ -263,8 +266,8 @@ function ProductsPanel() {
             await router.invalidate();
             setForm(emptyProduct);
             showToast("Αποθηκεύτηκε — το βλέπουν όλοι");
-          } catch {
-            showToast("Δεν αποθηκεύτηκε. Έλεγξε τον κωδικό.");
+          } catch (err) {
+            showToast(err instanceof Error ? err.message : "Δεν αποθηκεύτηκε.");
           } finally {
             setBusy(false);
           }
@@ -384,8 +387,15 @@ function ProductsPanel() {
         </div>
       </form>
 
+      <input
+        className="field mb-3"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="Αναζήτηση στον κατάλογο…"
+      />
+
       <div className="grid gap-2.5">
-        {products.map((p) => (
+        {visible.map((p) => (
           <article
             key={p.id}
             className="grid grid-cols-[56px_1fr] items-center gap-3 border border-line bg-bg-2 p-3 sm:grid-cols-[64px_1fr_auto]"

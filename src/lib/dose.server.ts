@@ -8,6 +8,12 @@ import {
   type ShopSettings,
 } from "@/lib/catalog";
 
+function useRemoteCatalog() {
+  const url = typeof process !== "undefined" ? process.env.DATABASE_URL : undefined;
+  if (url && url.trim()) return false;
+  return Boolean(process.env.VERCEL) || Boolean(process.env.SUPABASE_URL);
+}
+
 const PIN_PREFIX = "dose-shop-pin:";
 
 export function hashPin(pin: string) {
@@ -69,6 +75,10 @@ export async function fetchCatalog(): Promise<{
   products: Product[];
   shop: ShopSettings;
 }> {
+  if (useRemoteCatalog()) {
+    const remote = await import("./dose.remote");
+    return remote.fetchCatalog();
+  }
   const sql = await getSql();
   await ensureCatalogRows(sql);
   const products = await sql<ProductRow>`
@@ -131,6 +141,10 @@ async function ensureCatalogRows(
 }
 
 export async function pinMatches(pin: string) {
+  if (useRemoteCatalog()) {
+    const remote = await import("./dose.remote");
+    return remote.pinMatches(pin);
+  }
   const sql = await getSql();
   const rows = await sql<{ pin_hash: string }>`
     select pin_hash from shop_settings where id = 1
@@ -141,6 +155,10 @@ export async function pinMatches(pin: string) {
 }
 
 export async function upsertProductRow(product: Product) {
+  if (useRemoteCatalog()) {
+    const remote = await import("./dose.remote");
+    return remote.upsertProductRow(product);
+  }
   const sql = await getSql();
   const existing = await sql<{ sort_order: number }>`
     select sort_order from products where id = ${product.id}
@@ -169,6 +187,10 @@ export async function upsertProductRow(product: Product) {
 }
 
 export async function deleteProductRow(id: string) {
+  if (useRemoteCatalog()) {
+    const remote = await import("./dose.remote");
+    return remote.deleteProductRow(id);
+  }
   const sql = await getSql();
   await sql`delete from products where id = ${id}`;
 }
@@ -177,6 +199,10 @@ export async function updateShopRow(
   shop: ShopSettings,
   nextPin: string | undefined,
 ) {
+  if (useRemoteCatalog()) {
+    const remote = await import("./dose.remote");
+    return remote.updateShopRow(shop, nextPin);
+  }
   const sql = await getSql();
   if (nextPin && nextPin.trim()) {
     const pinHash = hashPin(nextPin.trim());
