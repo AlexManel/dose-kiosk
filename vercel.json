@@ -1,11 +1,5 @@
 {
-  "framework": null,
-  "buildCommand": "node scripts/with-app-env.mjs vite build",
-  "redirects": [
-    {
-      "source": "/images/:path*",
-      "destination": "https://raw.githubusercontent.com/AlexManel/dose-kiosk/main/public/images/:path*",
-      "permanent": false
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "tanstack-start",
+  "buildCommand": "node scripts/with-app-env.mjs vite build"
 }
