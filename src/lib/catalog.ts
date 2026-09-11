@@ -78,6 +78,7 @@ export function matchesQuery(product: Product, q: string) {
 
 function hints(p: Product) {
   if (p.id.startsWith("ter")) return "iqos terea terrea iluma θερμαινομενος";
+  if (p.id.startsWith("delph")) return "delph δελφ cigarillos πουρακια grekotabak click";
   if (p.id.startsWith("del")) return "delia ντελια iqos ραβδοι θερμαινομενος";
   if (p.id.startsWith("evo")) return "ploom evo θερμαινομενος";
   if (p.id.startsWith("neo")) return "glo neo θερμαινομενος hyper";
@@ -91,7 +92,14 @@ function hints(p: Product) {
   if (p.id.startsWith("lucky")) return "lucky strike λακι τσιγαρα";
   if (p.id.startsWith("west")) return "west ουεστ τσιγαρα silver original 100s";
   if (p.id.startsWith("prince")) return "prince πρινς τσιγαρα rich mellow";
-  if (p.id.startsWith("jps")) return "jps john player special τσιγαρα 100s";
+  if (p.id.startsWith("jps")) return "jps john player special τσιγαρα 100s sl line";
+  if (p.id.startsWith("r1")) return "r1 αρ1 st-line stline τσιγαρα";
+  if (p.id.startsWith("ome")) return "ome ομε τσιγαρα karelia";
+  if (p.id.startsWith("kar") || p.id.startsWith("gk"))
+    return "karelia καρελια george karelias τσιγαρα φιλτρο slim 100s";
+  if (p.id.startsWith("stuy")) return "stuyvesant στουιβεσαντ peter τσιγαρα 24αδα";
+  if (p.id.startsWith("marl")) return "marlboro μαρλμπορο τσιγαρα gold red touch sline silver";
+  if (p.id.startsWith("lm")) return "l&m lm cigarillos τσιγαρα πουρακια";
   if (p.id.startsWith("v1")) return "veev one ατμισμα pod";
   if (p.id.startsWith("vp")) return "veev prime inprime ατμισμα pod";
   if (p.id.startsWith("cola")) return "κολα coca cola αναψυκτικο zero light";
@@ -251,7 +259,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=20`;
+const img = (file: string) => `/images/products/${file}?v=21`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -439,9 +447,13 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "trid-lm", name: "Trident Long Lasting Μέντα", desc: "22g, χωρίς ζάχαρη", price: 1.0, cat: "market", photo: img("trident-long-mint.jpg") },
   { id: "trid-ll", name: "Trident Long Lasting Φράουλα Λάιμ", desc: "22g, χωρίς ζάχαρη", price: 1.0, cat: "market", photo: img("trident-long-strawberry.jpg") },
 
-  { id: "marl", name: "Marlboro Red", desc: "Κόκκινο πακέτο", price: 5.5, cat: "smokes", photo: img("marlboro.jpg") },
-  { id: "marlg", name: "Marlboro Gold", desc: "Χρυσό πακέτο", price: 5.5, cat: "smokes", photo: img("pack-gold.jpg") },
-  { id: "marlt", name: "Marlboro Touch", desc: "Slim", price: 5.5, cat: "smokes", photo: img("pack-slim.jpg") },
+  { id: "marl", name: "Marlboro Red", desc: "Κόκκινο πακέτο · 20άδα", price: 5.5, cat: "smokes", photo: img("marlboro-red.jpg") },
+  { id: "marl-100", name: "Marlboro Red 100s", desc: "100s", price: 5.7, cat: "smokes", photo: img("marlboro-red-100s.jpg") },
+  { id: "marlg", name: "Marlboro Gold", desc: "Χρυσό πακέτο · 20άδα", price: 5.5, cat: "smokes", photo: img("marlboro-gold.jpg") },
+  { id: "marlg-100", name: "Marlboro Gold 100s", desc: "100s", price: 5.7, cat: "smokes", photo: img("marlboro-gold-100s.jpg") },
+  { id: "marls", name: "Marlboro Silver Blue", desc: "20άδα", price: 5.5, cat: "smokes", photo: img("marlboro-silver.jpg") },
+  { id: "marlt", name: "Marlboro Touch XL", desc: "100s · slim", price: 5.5, cat: "smokes", photo: img("marlboro-touch-xl.jpg") },
+  { id: "marl-sl", name: "Marlboro S-Line Gold", desc: "Slim", price: 5.5, cat: "smokes", photo: img("marlboro-sline.jpg") },
   { id: "winst", name: "Winston Classic Red Greece", desc: "Limited Edition · 20άδα", price: 5.2, cat: "smokes", photo: img("winston-greece-red.jpg") },
   { id: "winstb", name: "Winston Legend Blue", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-legend-blue.jpg") },
   { id: "winst-fw", name: "Winston 100s Fine White", desc: "100s", price: 5.4, cat: "smokes", photo: img("winston-fine-white.jpg") },
@@ -463,11 +475,53 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "west-o100", name: "West Original 100s", desc: "100s", price: 4.9, cat: "smokes", photo: img("west-original-100s.jpg") },
   { id: "jps-r", name: "JPS 100s Red", desc: "John Player Special · 100s", price: 5.0, cat: "smokes", photo: img("jps-red-100s.jpg") },
   { id: "jps-b", name: "JPS 100s Blue", desc: "John Player Special · 100s", price: 5.0, cat: "smokes", photo: img("jps-blue-100s.jpg") },
-  { id: "parl", name: "Parliament", desc: "Aqua slim", price: 5.8, cat: "smokes", photo: img("pack-slim.jpg") },
+  { id: "jps-ss", name: "JPS Silver SL Line", desc: "Slim", price: 5.0, cat: "smokes", photo: img("jps-silver-sl.jpg") },
+  { id: "jps-sw", name: "JPS White SL Line", desc: "Slim", price: 5.0, cat: "smokes", photo: img("jps-white-sl.jpg") },
+  { id: "r1-r", name: "R1 Red", desc: "20άδα", price: 4.3, cat: "smokes", photo: img("r1-red.jpg") },
+  { id: "r1-b", name: "R1 Blue", desc: "20άδα", price: 4.3, cat: "smokes", photo: img("r1-blue.jpg") },
+  { id: "r1-sb", name: "R1 St-Line Blue", desc: "Slim", price: 4.5, cat: "smokes", photo: img("r1-stline-blue.jpg") },
+  { id: "r1-sc", name: "R1 St-Line Ciel", desc: "Slim", price: 4.5, cat: "smokes", photo: img("r1-stline-ciel.jpg") },
+  { id: "r1-sg", name: "R1 St-Line Gold", desc: "Slim", price: 4.5, cat: "smokes", photo: img("r1-stline-gold.jpg") },
+  { id: "ome-p", name: "Omé Pink", desc: "20άδα", price: 4.5, cat: "smokes", photo: img("ome-pink.jpg") },
+  { id: "ome-o", name: "Omé Orange", desc: "20άδα", price: 4.5, cat: "smokes", photo: img("ome-orange.jpg") },
+  { id: "ome-m", name: "Omé Mint", desc: "20άδα", price: 4.5, cat: "smokes", photo: img("ome-mint.jpg") },
   { id: "kar", name: "Karelia Red", desc: "Κόκκινο", price: 4.8, cat: "smokes", photo: img("pack-red.jpg") },
-  { id: "kars", name: "Karelia Slim", desc: "Slim", price: 5.0, cat: "smokes", photo: img("pack-slim.jpg") },
+  { id: "kar-f", name: "Καρέλια Φίλτρο", desc: "Κλασικό · 20άδα", price: 4.5, cat: "smokes", photo: img("karelia-filter.jpg") },
+  { id: "kar-w", name: "Karelia White", desc: "20άδα", price: 4.8, cat: "smokes", photo: img("karelia-white.jpg") },
+  { id: "kar-w100", name: "Karelia White 100s", desc: "100s", price: 5.0, cat: "smokes", photo: img("karelia-white-100s.jpg") },
+  { id: "kar-b", name: "Karelia Blue", desc: "20άδα", price: 4.8, cat: "smokes", photo: img("karelia-blue.jpg") },
+  { id: "kar-b100", name: "Karelia Blue 100s", desc: "100s", price: 5.0, cat: "smokes", photo: img("karelia-blue-100s.jpg") },
+  { id: "kars", name: "Karelia Slim", desc: "Slim", price: 5.0, cat: "smokes", photo: img("karelia-slim-l.jpg") },
+  { id: "kar-sm", name: "Karelia Slims M", desc: "The M Cigarette · slim", price: 5.0, cat: "smokes", photo: img("karelia-slim-m.jpg") },
+  { id: "kar-si", name: "Karelia Slims I", desc: "The I Cigarette · slim", price: 5.0, cat: "smokes", photo: img("karelia-slim-i.jpg") },
+  { id: "kar-sl", name: "Karelia Slims L", desc: "The L Cigarette · slim", price: 5.0, cat: "smokes", photo: img("karelia-slim-l.jpg") },
+  { id: "kar-ss", name: "Karelia Slims S", desc: "The S Cigarette · slim", price: 5.0, cat: "smokes", photo: img("karelia-slim-s.jpg") },
+  { id: "gk-sel", name: "George Karelias Selected Virginia", desc: "20άδα", price: 5.6, cat: "smokes", photo: img("gk-selected.jpg") },
+  { id: "gk-selb", name: "George Karelias Selected Blue", desc: "20άδα", price: 5.6, cat: "smokes", photo: img("gk-selected-blue.jpg") },
+  { id: "gk-br", name: "George Karelias Bright Virginia", desc: "20άδα", price: 5.6, cat: "smokes", photo: img("gk-bright.jpg") },
+  { id: "gk-ref", name: "George Karelias Refined Virginia", desc: "20άδα", price: 5.6, cat: "smokes", photo: img("gk-refined.jpg") },
+  { id: "gk-ex", name: "George Karelias Excellence", desc: "20άδα", price: 5.8, cat: "smokes", photo: img("gk-excellence.jpg") },
+  { id: "stuy-r", name: "Peter Stuyvesant Red", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("stuyvesant-red.jpg") },
+  { id: "stuy-b", name: "Peter Stuyvesant Blue", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("stuyvesant-blue.jpg") },
+  { id: "stuy-s", name: "Peter Stuyvesant Silver Blue", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("stuyvesant-silver.jpg") },
+  { id: "stuy-w", name: "Peter Stuyvesant White", desc: "20άδα", price: 5.0, cat: "smokes", photo: img("stuyvesant-white.jpg") },
+  { id: "stuy-r24", name: "Peter Stuyvesant Red 24", desc: "24άδα", price: 5.6, cat: "smokes", photo: img("stuyvesant-red-24.jpg") },
+  { id: "stuy-b24", name: "Peter Stuyvesant Blue 24", desc: "24άδα", price: 5.6, cat: "smokes", photo: img("stuyvesant-blue-24.jpg") },
+  { id: "stuy-s24", name: "Peter Stuyvesant Silver Blue 24", desc: "24άδα", price: 5.6, cat: "smokes", photo: img("stuyvesant-silver-24.jpg") },
+  { id: "stuy-w24", name: "Peter Stuyvesant White 24", desc: "24άδα", price: 5.6, cat: "smokes", photo: img("stuyvesant-white-24.jpg") },
+  { id: "lm", name: "L&M Blue", desc: "20άδα", price: 4.8, cat: "smokes", photo: img("lm-blue.jpg") },
+  { id: "lm-r", name: "L&M Red", desc: "20άδα", price: 4.8, cat: "smokes", photo: img("lm-red.jpg") },
+  { id: "lm-cr", name: "L&M Cigarillos Red", desc: "Tobacco leaf wrapped", price: 3.5, cat: "smokes", photo: img("lm-cigarillos-red.jpg") },
+  { id: "lm-cb", name: "L&M Cigarillos Blue", desc: "Tobacco leaf wrapped", price: 3.5, cat: "smokes", photo: img("lm-cigarillos-blue.jpg") },
+  { id: "delph-v", name: "Delph V 20", desc: "20 filter cigarillos", price: 3.8, cat: "smokes", photo: img("delph-v.jpg") },
+  { id: "delph-s", name: "Delph Silver 20", desc: "20 filter cigarillos", price: 3.8, cat: "smokes", photo: img("delph-silver.jpg") },
+  { id: "delph-g", name: "Delph Gold 20", desc: "20 filter cigarillos", price: 3.8, cat: "smokes", photo: img("delph-gold.jpg") },
+  { id: "delph-v10", name: "Delph V 10", desc: "10 filter cigarillos", price: 2.2, cat: "smokes", photo: img("delph-v-10.jpg") },
+  { id: "delph-s10", name: "Delph Silver 10", desc: "10 filter cigarillos", price: 2.2, cat: "smokes", photo: img("delph-silver-10.jpg") },
+  { id: "delph-g10", name: "Delph Gold 10", desc: "10 filter cigarillos", price: 2.2, cat: "smokes", photo: img("delph-gold-10.jpg") },
+  { id: "delph-c", name: "Delph Click 10", desc: "10 filter cigarillos · κάψουλα", price: 2.4, cat: "smokes", photo: img("delph-click.jpg") },
+  { id: "parl", name: "Parliament", desc: "Aqua slim", price: 5.8, cat: "smokes", photo: img("pack-slim.jpg") },
   { id: "pall", name: "Pall Mall", desc: "Κόκκινο", price: 4.7, cat: "smokes", photo: img("pack-gold.jpg") },
-  { id: "lm", name: "L&M Blue", desc: "Μπλε", price: 4.8, cat: "smokes", photo: img("pack-blue.jpg") },
   { id: "assos", name: "Assos", desc: "Διεθνές", price: 4.5, cat: "smokes", photo: img("pack-red.jpg") },
   { id: "chest", name: "Chesterfield", desc: "Κόκκινο", price: 4.7, cat: "smokes", photo: img("pack-red.jpg") },
 
