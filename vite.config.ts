@@ -70,6 +70,16 @@ function copyPgliteWasm() {
   }
 }
 
+function copyPgliteWasmPlugin(): Plugin {
+  return {
+    name: "app-builder:copy-pglite-wasm",
+    apply: "build",
+    closeBundle() {
+      copyPgliteWasm();
+    },
+  };
+}
+
 /**
  * Live-preview OAuth popup — handled HERE so the agent never has to create a
  * `/auth/popup` route (and cannot break it by scaffolding a React page that
@@ -194,11 +204,8 @@ export default defineConfig(({ command, isPreview }) => ({
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
-            hooks: {
-              compiled: copyPgliteWasm,
-              close: copyPgliteWasm,
-            },
           }),
+          copyPgliteWasmPlugin(),
         ]
       : []),
     viteReact(),

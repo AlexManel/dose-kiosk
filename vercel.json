@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "tanstack-start",
-  "buildCommand": "node scripts/with-app-env.mjs vite build"
+  "buildCommand": "node scripts/with-app-env.mjs vite build && node scripts/ensure-vercel-output.mjs"
 }
