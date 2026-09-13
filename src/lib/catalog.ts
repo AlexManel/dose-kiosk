@@ -259,7 +259,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=21`;
+const img = (file: string) => `/images/products/${file}?v=22`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -455,9 +455,10 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "marlt", name: "Marlboro Touch XL", desc: "100s · slim", price: 5.5, cat: "smokes", photo: img("marlboro-touch-xl.jpg") },
   { id: "marl-sl", name: "Marlboro S-Line Gold", desc: "Slim", price: 5.5, cat: "smokes", photo: img("marlboro-sline.jpg") },
   { id: "winst", name: "Winston Classic Red Greece", desc: "Limited Edition · 20άδα", price: 5.2, cat: "smokes", photo: img("winston-greece-red.jpg") },
+  { id: "winst-r", name: "Winston Classic Red", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-classic-red.jpg") },
   { id: "winstb", name: "Winston Legend Blue", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-legend-blue.jpg") },
-  { id: "winst-fw", name: "Winston 100s Fine White", desc: "100s", price: 5.4, cat: "smokes", photo: img("winston-fine-white.jpg") },
-  { id: "winst-ts", name: "Winston 100s True Silver", desc: "100s", price: 5.4, cat: "smokes", photo: img("winston-true-silver.jpg") },
+  { id: "winst-fw", name: "Winston Fine White", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-fine-white.jpg") },
+  { id: "winst-ts", name: "Winston True Silver", desc: "20άδα", price: 5.2, cat: "smokes", photo: img("winston-true-silver.jpg") },
   { id: "winst-gr", name: "Winston 100s Classic Red Greece", desc: "Limited Edition · 100s", price: 5.4, cat: "smokes", photo: img("winston-greece-100s.jpg") },
   { id: "davi", name: "Davidoff Slim", desc: "Slim", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
   { id: "davic", name: "Davidoff Classic", desc: "Κλασικό", price: 5.8, cat: "smokes", photo: img("davidoff.jpg") },
