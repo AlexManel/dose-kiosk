@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toast } from "@/components/site/Toast";
@@ -70,6 +71,7 @@ function RootDocument() {
           <CartSheet />
           <Toast />
         </AuthProvider>
+        <Analytics />
         <Scripts />
       </body>
     </html>
