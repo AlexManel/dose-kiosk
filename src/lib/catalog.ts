@@ -454,7 +454,7 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "marlg-100", name: "Marlboro Gold 100s", desc: "100s", price: 4.8, cat: "smokes", photo: img("marlboro-gold-100s.jpg") },
   { id: "marls", name: "Marlboro Silver Blue", desc: "20άδα", price: 4.8, cat: "smokes", photo: img("marlboro-silver.jpg") },
   { id: "marlt", name: "Marlboro Touch XL", desc: "100s · slim", price: 4.3, cat: "smokes", photo: img("marlboro-touch-xl.jpg") },
-  { id: "marl-sl", name: "Marlboro S-Line Gold", desc: "Slim", price: 5.5, cat: "smokes", photo: img("marlboro-sline.jpg") },
+  { id: "marl-sl", name: "Marlboro S-Line Gold", desc: "Slim", price: 4.0, cat: "smokes", photo: img("marlboro-sline.jpg") },
   { id: "marl-23", name: "Marlboro Red 23", desc: "23άδα", price: 5.0, cat: "smokes", photo: img("marlboro-red.jpg") },
   { id: "marl-30", name: "Marlboro τούβλο 30", desc: "30άδα", price: 6.0, cat: "smokes", photo: img("marlboro-red.jpg") },
   { id: "winst", name: "Winston Classic Red Greece", desc: "Limited Edition · 20άδα", price: 4.2, cat: "smokes", photo: img("winston-greece-red.jpg") },
