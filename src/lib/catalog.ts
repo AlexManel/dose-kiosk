@@ -259,7 +259,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=25`;
+const img = (file: string) => `/images/products/${file}?v=26`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -332,17 +332,9 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "pow-mb", name: "Powerade Mountain Blast", desc: "500ml", price: 1.8, cat: "drinks", photo: img("powerade-blast.jpg") },
   { id: "pow-mbz", name: "Powerade Mountain Blast Zero", desc: "500ml, χωρίς ζάχαρη", price: 1.8, cat: "drinks", photo: img("powerade-blast-zero.jpg") },
 
-  { id: "amita-a", name: "Amita Μήλο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-milo.jpg") },
-  { id: "amita-ga", name: "Amita Πράσινο Μήλο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-prasino-milo.jpg") },
-  { id: "amita-ban", name: "Amita Μπανάνα", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-banana.jpg") },
   { id: "amita-p", name: "Amita Ροδάκινο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-rodakino.jpg") },
-  { id: "amita-lem", name: "Amita Λεμόνι", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-lemoni.jpg") },
   { id: "amita-v", name: "Amita Βύσσινο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-vyssino.jpg") },
-  { id: "amita-o100", name: "Amita Πορτοκάλι 100%", desc: "1L φυσικός χυμός", price: 2.5, cat: "juice", photo: img("amita-portokali-100.jpg") },
   { id: "amita-mix", name: "Amita Πορτοκάλι Βερίκοκο Μήλο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-triplo.jpg") },
-  { id: "amita-cran", name: "Amita Κοκτέιλ Κράνμπερι", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-cranberry.jpg") },
-  { id: "amita-pin", name: "Amita Ανανάς", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-ananas.jpg") },
-  { id: "amita-car", name: "Amita Μήλο Πορτοκάλι Καρότο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-karoto.jpg") },
   { id: "amita-o", name: "Amita Πορτοκάλι", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-portokali.jpg") },
   { id: "amita-m", name: "Amita Motion 1L", desc: "9 φρούτα · 7 βιταμίνες", price: 2.5, cat: "juice", photo: img("amita-motion.jpg") },
   { id: "amita-m33", name: "Amita Motion 0.33L", desc: "9 φρούτα · 7 βιταμίνες", price: 1.8, cat: "juice", photo: img("amita-motion-330.jpg") },
