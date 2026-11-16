@@ -518,10 +518,8 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "delph-s10", name: "Delph Silver 10", desc: "10 filter cigarillos", price: 2.2, cat: "smokes", photo: img("delph-silver-10.jpg") },
   { id: "delph-g10", name: "Delph Gold 10", desc: "10 filter cigarillos", price: 2.2, cat: "smokes", photo: img("delph-gold-10.jpg") },
   { id: "delph-c", name: "Delph Click 10", desc: "10 filter cigarillos · κάψουλα", price: 2.4, cat: "smokes", photo: img("delph-click.jpg") },
-  { id: "parl", name: "Parliament", desc: "Aqua slim", price: 5.8, cat: "smokes", photo: img("pack-slim.jpg") },
   { id: "pall", name: "Pall Mall", desc: "Κόκκινο", price: 4.7, cat: "smokes", photo: img("pack-gold.jpg") },
   { id: "assos", name: "Assos", desc: "Διεθνές", price: 4.5, cat: "smokes", photo: img("pack-red.jpg") },
-  { id: "chest", name: "Chesterfield", desc: "Κόκκινο", price: 4.7, cat: "smokes", photo: img("pack-red.jpg") },
 
   { id: "iluma-one", name: "IQOS ILUMA i ONE", desc: "Συσκευή · Breeze Blue", price: 39.0, cat: "heat", photo: img("iqos-iluma-one.jpg") },
   { id: "iluma-mid", name: "IQOS ILUMA i MID", desc: "Συσκευή + θήκη · Breeze Blue", price: 69.0, cat: "heat", photo: img("iqos-iluma-mid.jpg") },
