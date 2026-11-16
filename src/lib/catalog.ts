@@ -259,7 +259,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=26`;
+const img = (file: string) => `/images/products/${file}?v=27`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
@@ -332,19 +332,19 @@ const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "pow-mb", name: "Powerade Mountain Blast", desc: "500ml", price: 1.8, cat: "drinks", photo: img("powerade-blast.jpg") },
   { id: "pow-mbz", name: "Powerade Mountain Blast Zero", desc: "500ml, χωρίς ζάχαρη", price: 1.8, cat: "drinks", photo: img("powerade-blast-zero.jpg") },
 
-  { id: "amita-p", name: "Amita Ροδάκινο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-rodakino.jpg") },
-  { id: "amita-v", name: "Amita Βύσσινο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-vyssino.jpg") },
-  { id: "amita-mix", name: "Amita Πορτοκάλι Βερίκοκο Μήλο", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-triplo.jpg") },
-  { id: "amita-o", name: "Amita Πορτοκάλι", desc: "1L χυμός", price: 2.2, cat: "juice", photo: img("amita-portokali.jpg") },
-  { id: "amita-m", name: "Amita Motion 1L", desc: "9 φρούτα · 7 βιταμίνες", price: 2.5, cat: "juice", photo: img("amita-motion.jpg") },
+  { id: "amita-p", name: "Amita Ροδάκινο", desc: "1L χυμός", price: 2.6, cat: "juice", photo: img("amita-rodakino.jpg") },
+  { id: "amita-v", name: "Amita Βύσσινο", desc: "1L χυμός", price: 2.6, cat: "juice", photo: img("amita-vyssino.jpg") },
+  { id: "amita-mix", name: "Amita Πορτοκάλι Βερίκοκο Μήλο", desc: "1L χυμός", price: 2.6, cat: "juice", photo: img("amita-triplo.jpg") },
+  { id: "amita-o", name: "Amita Πορτοκάλι", desc: "1L χυμός", price: 2.6, cat: "juice", photo: img("amita-portokali.jpg") },
+  { id: "amita-m", name: "Amita Motion 1L", desc: "9 φρούτα · 7 βιταμίνες", price: 2.8, cat: "juice", photo: img("amita-motion.jpg") },
   { id: "amita-m33", name: "Amita Motion 0.33L", desc: "9 φρούτα · 7 βιταμίνες", price: 1.8, cat: "juice", photo: img("amita-motion-330.jpg") },
-  { id: "amita-b", name: "Frulite Boost Πορτοκάλι Νεκταρίνι", desc: "500ml, φυσική ενέργεια", price: 2.2, cat: "juice", photo: img("frulite-boost.jpg") },
-  { id: "fru-s", name: "Frulite Φράουλα", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-fraoula.jpg") },
-  { id: "fru-o", name: "Frulite Πορτοκάλι Καρότο Μάνγκο", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-portokali-karoto-mango.jpg") },
-  { id: "fru-v", name: "Frulite Μανταρίνι Σαγκουίνι", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-mandarini.jpg") },
-  { id: "fru-p", name: "Frulite Passion Fruit Κοκτέιλ", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-passion.jpg") },
-  { id: "fru-a", name: "Frulite Ανανάς Καρύδα", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-ananas-karyda.jpg") },
-  { id: "fru-b", name: "Frulite Μπανάνα Βύσσινο", desc: "0,33L φρουτοποτό", price: 1.4, cat: "juice", photo: img("frulite-banana-vyssino.jpg") },
+  { id: "amita-b", name: "Frulite Boost Πορτοκάλι Νεκταρίνι", desc: "500ml, φυσική ενέργεια", price: 1.8, cat: "juice", photo: img("frulite-boost.jpg") },
+  { id: "fru-s", name: "Frulite Φράουλα", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-fraoula.jpg") },
+  { id: "fru-o", name: "Frulite Πορτοκάλι Καρότο Μάνγκο", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-portokali-karoto-mango.jpg") },
+  { id: "fru-v", name: "Frulite Μανταρίνι Σαγκουίνι", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-mandarini.jpg") },
+  { id: "fru-p", name: "Frulite Passion Fruit Κοκτέιλ", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-passion.jpg") },
+  { id: "fru-a", name: "Frulite Ανανάς Καρύδα", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-ananas-karyda.jpg") },
+  { id: "fru-b", name: "Frulite Μπανάνα Βύσσινο", desc: "0,33L φρουτοποτό", price: 1.8, cat: "juice", photo: img("frulite-banana-vyssino.jpg") },
 
   { id: "rb", name: "Red Bull", desc: "250ml", price: 2.2, cat: "energy", photo: img("redbull.jpg") },
   { id: "rbsf", name: "Red Bull Sugarfree", desc: "250ml, χωρίς ζάχαρη", price: 2.2, cat: "energy", photo: img("redbull-sf.jpg") },
