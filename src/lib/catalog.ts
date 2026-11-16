@@ -259,7 +259,7 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=27`;
+const img = (file: string) => `/images/products/${file}?v=28`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
   { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
