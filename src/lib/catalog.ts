@@ -259,13 +259,13 @@ export const DEFAULT_SHOP: ShopSettings = {
   hoursNote: "Καθημερινά",
 };
 
-const img = (file: string) => `/images/products/${file}?v=29`;
+const img = (file: string) => `/images/products/${file}?v=30`;
 
 const BASE_MENU: Omit<Product, "stock">[] = [
-  { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: "/images/espresso.jpg" },
+  { id: "esp", name: "Espresso", desc: "Μονός, κοντός, με κρέμα", price: 1.8, cat: "coffee", photo: img("espresso.jpg") },
   { id: "espd", name: "Espresso διπλός", desc: "Όταν η μέρα το απαιτεί", price: 2.3, cat: "coffee", photo: img("espresso-double.jpg") },
   { id: "cap", name: "Cappuccino", desc: "Γάλα, μικροαφρός", price: 2.5, cat: "coffee", photo: img("cappuccino.jpg") },
-  { id: "fe", name: "Freddo espresso", desc: "Κρύος, σφιχτός", price: 2.4, cat: "coffee", photo: "/images/freddo.jpg" },
+  { id: "fe", name: "Freddo espresso", desc: "Κρύος, σφιχτός", price: 2.4, cat: "coffee", photo: img("freddo.jpg") },
   { id: "fc", name: "Freddo cappuccino", desc: "Με αφρόγαλα", price: 2.8, cat: "coffee", photo: img("freddo-cap.jpg") },
   { id: "frap", name: "Frappe", desc: "Κρύος, χτυπημένος", price: 2.3, cat: "coffee", photo: img("frappe.jpg") },
   { id: "el", name: "Ελληνικός", desc: "Μεζές της υπομονής", price: 1.8, cat: "coffee", photo: img("ellinikos.jpg") },
